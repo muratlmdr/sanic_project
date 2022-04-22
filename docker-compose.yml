@@ -1,9 +1,16 @@
 version: '3'
-
 services:
+
+  db:
+    build: mongodb+srv://muratalemdr:12345_mm@muratlmdr.0lejv.mongodb.net/dockersanic?retryWrites=true&w=majority
+
+
   web:
-    build: ./pycache
+    build: https://github.com/muratlmdr/sanic_project.git
+    depends_on:
+      - db
+
+
     ports:
       - "8000:8000"
-  db:
-    build: ./
+
