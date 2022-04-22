@@ -6,10 +6,11 @@ from sanic.response import json
 
 
 app = Sanic("Murat")
-cluster = MongoClient()
 
-db = cluster["dockersanic"]
-collection = db["docker_sanic"]
+myclient= pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["dackersanic"]
+collection = mydb["docker_sanic"]
+
 
 @app.route("/json", methods=['POST'])
 def post_json(request):

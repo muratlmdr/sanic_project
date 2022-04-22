@@ -1,11 +1,28 @@
 version: '3'
 services:
+
+  db:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: dackersanic to create
+      MONGO_INITDB_COLLECTION: docker_sanic to create
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db-data:/var/lib/mongodb/data
+
   web:
     build: https://github.com/muratlmdr/sanic_project.git
     depends_on:
       - db
-
-
+    environment:
+      DB_TYPE: mongodb
+      DB_HOST: db
+      DB_PORT: 27017
+      DB_NAME: dackersanic
+      DB_COLLECTION: docker_sanic
     ports:
       - "8000:8000"
 
