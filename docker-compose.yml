@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  web:
+    build: ./pycache
+    ports:
+      - "8000:8000"
+  db:
+    build: ./
