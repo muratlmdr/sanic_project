@@ -6,7 +6,7 @@ from sanic.response import json
 
 
 app = Sanic("Murat")
-cluster = MongoClient("mongodb+srv://muratalemdr:12345_mm@muratlmdr.0lejv.mongodb.net/dockersanic?retryWrites=true&w=majority")
+cluster = MongoClient()
 
 db = cluster["dockersanic"]
 collection = db["docker_sanic"]
