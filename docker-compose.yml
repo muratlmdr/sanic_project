@@ -3,7 +3,9 @@ services:
 
   db:
     build: mongodb+srv://muratalemdr:12345_mm@muratlmdr.0lejv.mongodb.net/dockersanic?retryWrites=true&w=majority
-
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/mongodb/data
 
   web:
     build: https://github.com/muratlmdr/sanic_project.git
@@ -14,3 +16,5 @@ services:
     ports:
       - "8000:8000"
 
+volumes:
+  db-data:
