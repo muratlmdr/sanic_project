@@ -1,7 +1,6 @@
 import pymongo
 from pymongo import MongoClient
 from sanic import Sanic, response
-import requests
 from sanic.response import json
 
 
