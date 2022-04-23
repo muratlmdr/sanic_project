@@ -24,7 +24,7 @@ services:
       DB_NAME: dackersanic
       DB_COLLECTION: docker_sanic
     ports:
-      - "8000:8000"
+      - "8081:8081"
 
 volumes:
   db-data:
