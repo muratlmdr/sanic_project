@@ -5,11 +5,8 @@ services:
     image: mongo:latest
     container_name: mongodb
     restart: always
-    environment:
-      MONGO_INITDB_DATABASE: dackersanic to create
-      MONGO_INITDB_COLLECTION: docker_sanic to create
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
       - ./db-data:/var/lib/mongodb/data
 

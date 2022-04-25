@@ -6,7 +6,7 @@ from sanic.response import json
 
 app = Sanic("Murat")
 
-myclient= pymongo.MongoClient("mongodb://localhost:27017/")
+myclient= pymongo.MongoClient("mongodb://db:27017/")
 mydb = myclient["dackersanic"]
 collection = mydb["docker_sanic"]
 
