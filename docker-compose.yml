@@ -16,14 +16,5 @@ services:
       - db
     ports:
       - "8081:8081"
-  alerta:
-    image: alerta/alerta-web
-    volumes:
-      - $PWD/config/config.json:/web/config.json
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-    restart: always
 volumes:
   db-data:
